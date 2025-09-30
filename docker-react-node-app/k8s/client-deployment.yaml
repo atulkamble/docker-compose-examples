@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: rn-client }
+spec:
+  selector: { matchLabels: { app: rn-client } }
+  replicas: 1
+  template:
+    metadata: { labels: { app: rn-client } }
+    spec:
+      containers:
+        - name: client
+          image: atuljkamble/docker-react-node-client:latest
+          ports: [{ containerPort: 80 }]

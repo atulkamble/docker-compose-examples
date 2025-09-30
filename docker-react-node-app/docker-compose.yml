@@ -1,0 +1,10 @@
+services:
+  api:
+    build: ./api
+    image: atuljkamble/docker-react-node-api:latest
+    ports: ["3000:3000"]
+  client:
+    build: ./client
+    image: atuljkamble/docker-react-node-client:latest
+    ports: ["8082:80"]
+    depends_on: [api]

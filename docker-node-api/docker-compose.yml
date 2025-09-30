@@ -1,0 +1,6 @@
+services:
+  api:
+    image: atuljkamble/docker-node-api:latest
+    build: .
+    ports: ["3000:3000"]
+    restart: unless-stopped
