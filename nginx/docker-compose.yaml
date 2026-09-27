@@ -1,0 +1,16 @@
+services:
+  web:
+    image: docker.io/atuljkamble/mynginx:latest
+    build: .
+    container_name: mycontainer
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    networks:
+      - mynetwork
+    volumes:
+      - ./data:/data
+
+networks:
+  mynetwork:
+    driver: bridge
